@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 version = re.search(
     r'^__version__\s*=\s*"(.*)"',
-    open('ebryx/__init__.py').read(), re.M).group(1)
+    open('__init__.py').read(), re.M).group(1)
 
 
 with open("README.md", "r") as fh:
@@ -12,14 +12,14 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name='ebryx',
-    packages=['ebryx', 'ebryx.crypto'],
+    name='opencrypt',
+    packages=find_packages(),
     entry_points={
-        'console_scripts': ['ebcrypt = ebryx.crypto._crypto:main'],
+        'console_scripts': ['ebcrypt = opencrypt._crypto:main'],
     },
     version=version,
-    url='https://github.com/EbryxLabs/ebryx',
-    description='Official library for Ebryx LLC.',
+    url='https://github.com/EbryxLabs/opencrypt',
+    description='Symmetric encryption and decryption compatible with openSSL.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Rana Awais',

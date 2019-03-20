@@ -1,15 +1,15 @@
 # Installation
 You can grab the latest .whl file from repository and install it via pip or just simply type:
 ```
-pip install ebryx
+pip install opencrypt
 ```
 If you want build from source code, then.
 ```
-git clone https://github.com/EbryxLabs/ebryx
-cd ebryx/
+git clone https://github.com/EbryxLabs/opencrypt
+cd opencrypt/
 python setup.py install
 ```
-You will have a package named **`ebryx`** installed for your python.
+You will have a package named **`opencrypt`** installed for your python.
 
 # Encryption / Decryption
 You can encrypt / decrypt data using `ebcrypt` tool. **(AES-256 Encryption)**
@@ -50,9 +50,7 @@ Similarly, you can encrypt using `ebcrypt` and decrypt the content using openssl
 # Code Usage
 You can also use it in your own code by importing the appropriate module.
 ```
-# import main module.
-import ebryx 
-
-# import crypto submodule.
-from ebryx import crypto
+import opencrypt
+opencrypt.encrypt_file(filename, new_keys=False)
+opencrypt.decrypt_file(filename, write_to_file=True, is_ciphertext=False)
 ```
